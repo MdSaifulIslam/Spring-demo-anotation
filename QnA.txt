@@ -1,0 +1,4 @@
+1. Can we name class name like tennisCoach/ tennisCoachText for default Componant annotataion?
+	-yes
+	
+2. 
