@@ -1,6 +1,6 @@
 package com.springdemo;
 
-public interface Fortune {
+public interface FortuneService {
 	
 	public String getFortune();
 }

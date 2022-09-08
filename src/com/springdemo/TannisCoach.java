@@ -1,17 +1,34 @@
 package com.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TannisCoach implements Coach {
-	
-	Fortune fortuneService;
 
 	@Autowired
-	public TannisCoach(Fortune fortuneService) {
-		this.fortuneService = fortuneService;
+	@Qualifier("randomFortuneService")
+	FortuneService fortuneService;
+
+	// @Autowired
+	// public TannisCoach(FortuneService fortuneService) {
+	// this.fortuneService = fortuneService;
+	// }
+
+	public TannisCoach() {
 	}
+	
+//	@Autowired
+//	public void setFortuneService(FortuneService fortuneService) {
+//		this.fortuneService = fortuneService;
+//	}
+
+//	@Autowired
+//	public void setservice(FortuneService fortuneService) {
+//		this.fortuneService = fortuneService;
+//	}
+
 
 	@Override
 	public String getDailyWorkout() {

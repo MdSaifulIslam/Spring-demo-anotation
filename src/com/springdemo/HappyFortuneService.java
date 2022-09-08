@@ -3,7 +3,7 @@ package com.springdemo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HappyFortuneService implements Fortune {
+public class HappyFortuneService implements FortuneService {
 
 	@Override
 	public String getFortune() {
