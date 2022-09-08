@@ -1,7 +1,11 @@
 package com.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,6 +21,11 @@ public class TannisCoach implements Coach {
 	// }
 
 	public TannisCoach() {
+	}
+	
+	@PostConstruct
+	public void doAfterCreate() {
+		System.out.println("Created first");
 	}
 	
 //	@Autowired
@@ -42,4 +51,8 @@ public class TannisCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	@PreDestroy
+	public void doBeforeDestroy() {
+		System.out.println("Good Bye, I have done");
+	}
 }
